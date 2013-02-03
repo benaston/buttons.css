@@ -1,0 +1,10 @@
+{
+  "name": "buttons.css",
+  "version": "0.0.1",
+  "dependencies": {
+    "node-static": "0.6.0"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}
