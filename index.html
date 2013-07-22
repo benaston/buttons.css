@@ -1,151 +1,600 @@
 <html>
 <head>
 <style>
+body  {
+	padding:35px;
+}
+@media screen {
+  @font-face {
+    font-family: pictos;
+    src: url("pictos.woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+code {
+padding: 2px 4px;
+color: #d14;
+white-space: nowrap;
+background-color: #f7f7f9;
+border: 1px solid #e1e1e8;
+}
+code, pre {
+padding: 0 3px 2px;
+font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+font-size: 12px;
+color: #333333;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+.table-bordered {
+border: 1px solid #dddddd;
+border-collapse: separate;
+border-radius: 7px;
+}
+table {
+max-width: 100%;
+background-color: transparent;
+border-collapse: collapse;
+border-spacing: 0px;
+}
+td, th {
+padding: 20px;
+}
 body {
-background-color:rgba(22,22,22,1);
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333333;
 }
-.orbit-wrapper {
+.table-striped tbody > tr:nth-child(odd) > td, 
+.table-striped tbody > tr:nth-child(odd) > th {
+background-color: #f9f9f9;
+}
+.table-striped-inverse tbody > tr:nth-child(odd) > td, 
+.table-striped-inverse tbody > tr:nth-child(odd) > th {
+background-color: rgba(51, 51, 51, 1);
+}
+.table-striped-inverse tbody > tr:nth-child(even) > td, 
+.table-striped-inverse tbody > tr:nth-child(even) > th {
+background-color: rgba(41, 41, 41, 1);
+}
+.table-striped-inverse {color:rgb(176, 174, 200);}
+
+/*******************************/
+
+.btn {
+padding: 0 !important;
+cursor: pointer;
+color: #000;
+border-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) !important;
+float: right;
+margin-left: 10px;	
+font-family: 'pictos';
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-color: transparent;
+-webkit-user-select:none;
+text-align:center;
+box-sizing: border-box;
+border: 2px solid;
+}
+
+.btn-40 {
+min-width: 40px;
+border-radius: 40px !important;
+line-height: 37px !important;
+height: 40px !important;
+font-size: 1em;
+}
+
+.btn-50 {
+min-width: 50px;
+border-radius: 50px !important;
+line-height: 47px !important;
+height: 50px !important;
+font-size: 1em;
+}
+
+.btn-80 {
+min-width: 80px;
+border-radius: 80px !important;
+line-height: 77px !important;
+height: 80px !important;
+font-size: 1.9em;
+border: 3px solid;
+}
+
+.btn-100 {
+min-width: 100px;
+border-radius: 100px !important;
+line-height: 97px !important;
+height: 100px !important;
+font-size: 2.1em;
+border: 3px solid;
+}
+
+.btn:disabled {
+	opacity: 0.5;
+}
+.btn:enabled:hover {
+text-decoration: none;
+border-color: rgba(0, 0, 0, 0.85) rgba(0, 0, 0, 0.85) rgba(0, 0, 0, 0.85) !important;
+-webkit-transition: border-color 0.1s linear, box-shadow 0.1s linear;
+box-shadow: 0 0 9px 2px rgba(200,200,200,0.2);
+}
+.btn:enabled:focus {
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: 2px;
+}
+.btn:enabled:active {
+box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05) !important;
+-webkit-transition: box-shadow 0.1s linear;
+}
+
+.btn-primary {
+border-color: rgba(0,109,204,0.95) rgba(0,109,204,0.95) rgba(0,109,204,0.95) !important;
+}
+.btn-primary:enabled:hover {
+border-color: #0059b8 #0059b8 #0059b8 !important;
+}
+
+
+.btn-success {
+border-color: rgba(0,200,0,0.45) rgba(0,200,0,0.45) rgba(0,200,0,0.45) !important;
+}
+.btn-success:enabled:hover {
+border-color: rgba(0,200,0,0.85) rgba(0,200,0,0.85) rgba(0,200,0,0.85) !important;
+}
+
+.btn-danger {
+border-color: rgba(189, 54, 47, .85) rgba(189, 54, 47, .85) rgba(189, 54, 47, .85) !important;
+}
+.btn-danger:enabled:hover {
+border-color: rgba(189, 54, 47, .95) rgba(189, 54, 47, .95) rgba(189, 54, 47, .95) !important;
+}
+
+.btn-inverse {
+color: rgb(0, 175, 237);
+}
+
+html select, html textarea, html input[type="text"], html input[type="password"], html input[type="datetime"], html input[type="datetime-local"], html input[type="date"], html input[type="month"], html input[type="time"], html input[type="week"], html input[type="number"], html input[type="email"], html input[type="url"], html input[type="search"], html input[type="tel"], html input[type="color"], html .uneditable-input {
+	box-shadow: none;
+border-radius: 0;
+margin: 20px;
+background: rgba(0, 0, 0, 0);
+border: none;
+border-bottom: 1px dotted rgb(91, 91, 120);
+display: inline-block;
+vertical-align: middle;
+outline: none;
+padding: 0;
+-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.field {
+	color: rgb(85, 85, 85);
+font-size: 1.2em !important;
+line-height: 31px !important;
+height: 31px !important;
+}
+
+
+input[type="radio"] {
+position: absolute;
+visibility: hidden;
+cursor: pointer;
+}
+
+input[type="radio"]:checked + label.radio {
+border: 2px solid black;
+}
+
+input[type="radio"]:checked + label.radio-inverted {
+border: 2px solid white;
+}
+
+label.radio {
+height: 80px;
+width: 80px;
+border-radius: 80px;
+line-height: 77px;
+border: 2px solid silver;
+text-align: center;
+display: block;
+box-sizing: border-box;
+cursor: pointer;
+margin:10px;
+-webkit-user-select: none;
+}
+
+label.radio:hover {
+-webkit-transition: box-shadow .1s linear;
+}
+
+label.radio:active {
+-webkit-transition: box-shadow .1s linear;
+box-shadow: 0 0 19px 12px rgba(200, 200, 200, .3);
+}
+
+label.radio-inverted {
+border: 2px solid black;
+box-shadow: 0 0 9px 2px rgba(200, 200, 200, 0.2);
+color: rgb(0, 175, 237);
+}
+
+label.radio-inverted:hover {
+-webkit-transition: box-shadow .1s linear;
+box-shadow: 0 0 9px 2px rgba(200, 200, 200, 0.3);
+}
+
+label.radio-inverted:active {
+-webkit-transition: box-shadow .1s linear;
+box-shadow: 0 0 19px 12px rgba(200, 200, 200, .3);
+}
+
+tr:nth-child(2) label.radio {
 position: relative;
-width: 40px;
-height:40px;
+left: 50px;
 }
-.centered {
-width:100%;
-height:100%;
-display:-webkit-box;
--webkit-box-orient:vertical;
--webkit-box-pack:center;
--webkit-box-align:center;
+
+.sheen {
+box-shadow: 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset;
 }
-.threeDElement {
--webkit-transition: -webkit-transform 1s;
--webkit-transform-style: preserve-3d;
+
+.thumbnail {
+box-sizing: border-box;
+position: relative;
+border-radius: 5px;
+background-size: cover;
+background-repeat: no-repeat;
+cursor: pointer;
+padding:4px;
 }
-.ping {
+
+.thumbnail h2 {
+	margin:0;
+}
+
+/*.thumbnail:hover {
+text-decoration: none;
+box-shadow: 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px 10px rgba(255, 255, 255, 0.25) inset, 0 0 0 2px rgba(255, 255, 0, 0.3) inset;
+}*/
+
+.thumbnail-219 {
+	font-size: 0.85em;
+width: 219px;
+height: 128px;
+}
+
+.thumbnail-108 {
+width: 108px;
+height: 65px;
+font-size: 0.45em;
+padding: 5px;
+}
+
+.thumbnail-108:before {
+bottom: -3px;
+right: -3px;
+border-radius: 0 0 7px 0;
+}
+
+.thumbnail:before {
+content: '';
+display: block;
+width: 56px;
+height: 56px;
+border-bottom: 0;
+border-right: 0;
+border-radius: 0 0 11px 0;
 position: absolute;
-top: 0;
-left:0;
-width: 40px;
-height: 40px;
-border-radius: 40px;
-box-shadow: 0 0 9px 2px rgba(255, 255, 255, .2);
-opacity: 1;
--webkit-animation-duration: 20s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-timing-function: ease-in-out;
--webkit-animation-direction: alternate;
+bottom: -4px;
+right: -4px;
+z-index: 999;
+box-shadow: 1px 3px 0px 0px rgb(51, 51, 51);
+-webkit-transition: box-shadow .1s linear;
 }
-.ping-dark {
+
+.thumbnail:hover:before {
+box-shadow: 1px 3px 0px 0px rgba(255, 200, 0, 0.3);
+}
+
+.thumbnail.selected:before {
+box-shadow: 1px 3px 0px 0px rgba(255, 200, 0, 0.3);
+}
+
+.thumbnail:after {
+content: '';
+display: block;
+width: 56px;
+height: 56px;
+border-top: 0;
+border-left: 0;
+border-radius: 11px 0 0 0;
 position: absolute;
-top: 0;
-left:0;
-width: 40px;
-height: 40px;
-border-radius: 40px;
-opacity: 1;
--webkit-animation-duration: 20s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-timing-function: ease-in-out;
--webkit-animation-direction: alternate;
-border: 2px solid rgba(0,0,0,.2);
+top: -4px;
+left: -4px;
+z-index: 999;
+box-shadow: -1px -3px 0px 0px rgb(51, 51, 51);
+-webkit-transition: box-shadow .1s linear;
 }
 
-.ping:nth-child(1) {
--webkit-animation-name: 'rotateWobble';
+.thumbnail:hover:after {
+box-shadow: -1px -3px 0px 0px rgba(255, 200, 0, 0.3);
 }
 
-.ping:nth-child(1) { -webkit-animation-name:'rotateWobble'; }
-.ping:nth-child(2) { -webkit-animation-name:'rotateWobble2'; }
-.ping:nth-child(3) { -webkit-animation-name:'rotateWobble3'; }
-
-
-@-webkit-keyframes 'rotateWobble2'
-{       
-	 0%{
-        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
-    
-    80% {
-        -webkit-transform: rotateY(350deg) rotateX(325deg) rotateZ(285deg);
-    }
-    100% {
-        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
+.thumbnail.selected:after {
+box-shadow: -1px -3px 0px 0px rgba(255, 200, 0, 0.3);
 }
 
-@-webkit-keyframes 'rotateWobble3'
-{       
-	 0%{
-        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
-    
-    80% {
-        -webkit-transform: rotateY(200deg) rotateX(725deg) rotateZ(185deg);
-    }
-    100% {
-        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
-}
-
-@-webkit-keyframes 'rotateWobble'
-{       
-	 0%{
-        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
-    
-    80% {
-        -webkit-transform: rotateY(10deg) rotateX(35deg) rotateZ(75deg);
-    }
-    100% {
-        -webkit-transform: rotateY(360deg) rotateX(0deg) rotateZ(360deg);
-    }
-}
-
-.vertical-line {
-	position: fixed;
-	left: 50%;
-	top:0;
-	margin: auto;
-	width: 1px;
-	height: 100%;
-	background-color: rgba(0,0,0,0.05);
-	box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
-	border: none;
-}
-.horizontal-line {
-	position: fixed;
-	top: 50%;
-	left:0;
-	margin: auto;
-	height: 1px;
-	width: 100%;
-	background-color: rgba(0,0,0,0.0.05);
-	box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
-	border: none;
-}
-.foo {
-position: absolute;
-top: 18px;
-left:18px;
+.thumbnail.edit:before {
+background-color: rgb(0, 0, 0);
+border-radius: 41px;
+box-shadow: 0px 0px 0 0px rgb(51, 51, 51);
+content: "";
+color: rgb(255, 255, 255);
+display: inline-block;
+font-size: 20px;
+position: relative;
+left: 45px;
+top: -52%;
 width: 2px;
-height: 2px;
-border: 2px solid red;
-background-color:red;
-border-radius:2px;
+height: 113px;
+line-height: 41px;
+text-align: center;
+-webkit-transform: rotate(45deg);
 }
 
+.thumbnail.edit {
+	-webkit-animation: jiggle 0.2s infinite 0.05s;
+}
+.thumbnail.edit:after {
+content: none !important;
+}
+
+@-webkit-keyframes jiggle {
+  0% {
+    -webkit-transform: rotate(-1deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(1deg);
+  }
+}
 </style>
 </head>
 <body>
-	<div class="vertical-line"></div>
-	<div class="horizontal-line"></div>
-	<div class="centered">		
-		<div class="orbit-wrapper">
-			<span class="foo"></span>
-			<span class="ping threeDElement"></span>
-			<span class="ping threeDElement"></span>
-			<span class="ping threeDElement"></span>			
-		</div>		
-	</div>	
+	<h1>Buttons</h1>	
+	<table class="table-bordered table-striped">
+		<tr>
+			<th>Button</th>
+			<th>class=""</th>
+			<th>Description</th>
+		</tr>		
+		<tr>
+			<td>
+				<button type="button" disabled="disabled" class="btn btn-80" value="s">s</button></td>
+			<td><code>btn btn-80</code></td>
+			<td>Disabled button</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" class="btn btn-80" value="s">s</button></td>
+			<td><code>btn btn-80</code></td>
+			<td>Standard gray button with gradient</td>
+		</tr>
+		<tr>
+			<td><button type="button" class="btn btn-80 btn-primary">s</button></td>
+			<td><code>btn btn-80 btn-primary</code></td>
+			<td>Primary Button</td>
+		</tr>
+		<tr>
+			<td><button type="button" class="btn btn-80 btn-success">s</button></td>
+			<td><code>btn btn-80 btn-success</code></td>
+			<td>Success Button</td>
+		</tr>
+		<tr>
+			<td><button type="button" class="btn btn-80 btn-danger">s</button></td>
+			<td><code>btn btn-80 btn-danger</code></td>
+			<td>Danger Button</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(51, 51, 51, 1);">
+				<button type="button" class="btn btn-80 btn-inverse" disabled="disabled" value="3">3</button></td>
+			<td><code>btn btn-80</code></td>
+			<td>Inverse disabled button</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(51, 51, 51, 1);">
+				<button type="button" class="btn btn-80 btn-inverse" value="3">3</button></td>
+			<td><code>btn btn-80</code></td>
+			<td>Inverse standard button</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(51, 51, 51, 1);"><button type="button" class="btn btn-80 btn-inverse btn-primary">3</button></td>
+			<td><code>btn btn-80 btn-primary</code></td>
+			<td>Primary Button</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(51, 51, 51, 1);"><button type="button" class="btn btn-80 btn-inverse btn-success">3</button></td>
+			<td><code>btn btn-80 btn-success</code></td>
+			<td>Success Button</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(51, 51, 51, 1);"><button type="button" class="btn btn-80 btn-inverse btn-danger">3</button></td>
+			<td><code>btn btn-80 btn-danger</code></td>
+			<td>Danger Button</td>
+		</tr>
+	</table>	
+	<h2>Button Sizes</h2>
+	<table class="table-bordered table-striped">
+		<tr>
+			<th>Button</th>
+			<th>class=""</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><label class="btn btn-40">s</label></td>
+			<td><code>btn btn-40</code></td>
+			<td>Small</td>
+		</tr>
+		<tr>
+			<td><label class="btn btn-50">s</label></td>
+			<td><code>btn btn-50</code></td>
+			<td>Medium-Small</td>
+		</tr>
+		<tr>
+			<td><label class="btn btn-80">s</label></td>
+			<td><code>btn btn-80</code></td>
+			<td>Medium</td>
+		</tr>
+		<tr>
+			<td><label class="btn btn-100">s</label></td>
+			<td><code>btn btn-100</code></td>
+			<td>Large</td>
+		</tr>
+	</table>	
+	<h1>Form Elements</h1>
+	<table class="table-bordered table-striped">
+		<tr>
+			<th>Element</th>
+			<th>class=""</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><input type="text" class="field" placeholder="placeholder" /></td>
+			<td><code>btn btn-100</code></td>
+			<td>Textbox</td>
+		</tr>
+		<tr>
+			<td>
+				<table>
+				<tbody>
+					<tr>
+						<td>
+							<input id="r200" name="r" type="radio" checked="checked">
+							<label class="radio" for="r200">a</label>									
+						</td>
+						<td>
+							<input id="r300" name="r" type="radio">
+							<label class="radio" for="r300">b</label>							
+						</td>
+						<td>
+							<input id="r400" name="r" type="radio">
+							<label class="radio" for="r400">c</label>
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			</td>
+			<td><code>btn btn-100</code></td>
+			<td>Radio Buttons</td>
+		</tr>
+		<tr >
+			<td>
+				<table >
+				<tbody>
+					<tr >
+						<td style="background-color: rgba(51, 51, 51, 1);">
+							<input id="r4" name="r" type="radio" checked="checked">
+							<label class="radio radio-inverted" for="r4">a</label>									
+						</td>
+						<td style="background-color: rgba(51, 51, 51, 1);">
+							<input id="r5" name="r" type="radio">
+							<label class="radio radio-inverted" for="r5">b</label>							
+						</td>
+						<td style="background-color: rgba(51, 51, 51, 1);">
+							<input id="r6" name="r" type="radio">
+							<label class="radio radio-inverted" for="r6">c</label>
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			</td>
+			<td><code>btn btn-100</code></td>
+			<td>Radio Buttons</td>
+		</tr>
+	</table>
+	<h1>Thumbnails</h1>
+	<table class="table-bordered table-striped">
+		<tr>
+			<th>Element</th>
+			<th>class=""</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumbnail thumbnail-219">	 
+							<h2>C# Developer / Technical Lead</h2>	 
+							<p>&pound;475-550/day (more for excellent candidates)</p> 
+							<p>London</p> 
+							<p class="posted">2 days ago</p>								 
+						</div>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumbnail selected thumbnail-219">	 
+							<h2>C# Developer / Technical Lead</h2>	 
+							<p>&pound;475-550/day (more for excellent candidates)</p> 
+							<p>London</p> 
+							<p class="posted">2 days ago</p>								 
+						</div>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumbnail thumbnail-108">	 
+							<h2>C# Developer / Technical Lead</h2>	 
+							<p>&pound;475-550/day (more for excellent candidates)</p> 
+							<p>London</p> 
+							<p class="posted">2 days ago</p>								 
+						</div>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumbnail selected thumbnail-108">	 
+							<h2>C# Developer / Technical Lead</h2>	 
+							<p>&pound;475-550/day (more for excellent candidates)</p> 
+							<p>London</p> 
+							<p class="posted">2 days ago</p>								 
+						</div>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumbnail thumbnail-219" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;">	
+				</div>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumbnail thumbnail-108" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;">	
+				</div>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="thumbnail edit thumbnail-108" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;">	
+				</div>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
 </body>
 </html>
