@@ -111,7 +111,7 @@ html input[type="color"],
 html .uneditable-input {
 box-shadow: none;
 border-radius: 0;
-margin: 20px;
+margin: 20px 20px 0px 20px;
 background: rgba(0, 0, 0, 0);
 border: none;
 border-bottom: 1px dotted rgb(91, 91, 120);

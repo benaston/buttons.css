@@ -8,20 +8,6 @@ font-weight: normal;
 font-style: normal;
 }
 
-body {
-color: #333;
-font-size: 1.1em;
-font-family: 'museo-sans-500';
-background-image: url("./logo.svg");
-background-size: 2000px auto, auto auto;
-background-repeat: no-repeat, repeat;
-background-position: 0 0;
-background-attachment: fixed;
-padding:50px;
-}
-
-
-
 footer {
 clear: both;
 top: 106px;

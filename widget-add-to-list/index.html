@@ -35,7 +35,7 @@
         border-right: 2px solid #c0c0c0;
         border-radius: 0 0 455px 0;
         width: 375px;
-        height:300px;
+        height: 269px;
       }
       #btn-search {
         position: absolute;
@@ -84,12 +84,11 @@
       }
       
       .search-filters {
-        margin:0 20px 20px 20px;
+        margin: 20px 20px 20px 20px;
       }
       .thumbnail-219 {
       padding: 1px 12px 1px 12px;
       margin: 15px 20px 25px 20px;
-      height: 178px;
       }
       .thumbnail-info {
         float:right;
@@ -115,7 +114,7 @@
       z-index: 4;      
       }
       .favourite-items {
-        top:10px;
+        top:25px;
       }
       input[type="radio"]:checked + label {
       border: 2px solid #000;
@@ -131,6 +130,17 @@
         height: 40px;
         width: 40px;
         border-radius: 40px;
+      }
+      .location-and-posted {
+        text-align: right;
+        font-style: italic;
+      }
+      .rate {
+        text-align: right;        
+      }
+      .thumbnail-108 h3 {
+        font-size:1em;
+        line-height:1em;
       }
     </style>
   </head>
@@ -418,37 +428,32 @@
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="1">S</div>
         <h3>C# Developer / Technical Lead</h3>   
-        <p>£475-550/day (more for excellent candidates)</p> 
-        <p>London</p> 
-        <p class="posted">1 day ago</p>                 
+        <p class="rate">£475-550/day (more for excellent candidates)</p> 
+        <p class="location-and-posted">London (1 day ago)</p> 
       </div>
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="2">S</div>
         <h3>Software Architect C#/.Net/Silverlight - Banking - Zürich</h3>   
-        <p>£400-500/day</p> 
-        <p>Zurich</p> 
-        <p class="posted">2 days ago</p>                 
+        <p class="rate">£400-500/day</p> 
+        <p class="location-and-posted">Zurich (2 days ago)</p> 
       </div> 
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
-        <h3>Front Office C# Engineer - Interest Rates & Pricing</h3>   
-        <p>550-575/day</p> 
-        <p>London</p> 
-        <p class="posted">3 days ago</p>                 
+        <h3>Front Office C# Engineer - Interest Rates &amp; Pricing</h3>   
+        <p class="rate">550-575/day</p> 
+        <p class="location-and-posted">London (3 days ago)</p>                
       </div>
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
         <h3>Scrum Master Agile Greenfield Finance .net</h3>   
-        <p>350-500/day</p> 
-        <p>Warwickshire</p> 
-        <p class="posted">3 days ago</p>                 
+        <p class="rate">350-500/day</p> 
+        <p class="location-and-posted">Warwickshire (3 days ago)</p> 
       </div>
       <div class="thumbnail thumbnail-219">  
         <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
         <h3>C# .Net Developer, Investment Bank, Equity Trading</h3>   
-        <p>550-550/day</p> 
-        <p>London</p> 
-        <p class="posted">3 days ago</p>                 
+        <p class="rate">550-550/day</p> 
+        <p class="location-and-posted">London (3 days ago)</p> 
       </div>
     </div>
     <div class="lucid-panel-absolute-full-height items-of-interest-panel overflow-y-scroll">
@@ -533,9 +538,12 @@
           </section>                   
       </article>
     </div>
-    <script id="template-list-item-id-1" type="text/html">
+    <script id="template-list-item-id-1" type="text/html">      
       <div class="hover" data-list-to-list-item-id="1"> 
-        <div class="thumbnail thumbnail-108" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;"> 
+        <div class="thumbnail thumbnail-108"> 
+          <h3>C# Developer / Technical Lead</h3>
+          <h4>&pound;475-500/day</h4>
+          <h4>London</h4>
         </div>       
       </div>
     </script>

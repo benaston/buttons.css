@@ -21,16 +21,25 @@ box-shadow: 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px 10px rgba(255, 255, 255
 .thumbnail-219 {
 	font-size: 0.85em;
 width: 219px;
-height: 128px;
+/*height: 128px;*/
 }
 
 .thumbnail-108 {
 width: 108px;
 height: 65px;
-font-size: 0.45em;
+font-size: 0.75em;
 padding: 5px;
 }
 
+.thumbnail-108 h3, .thumbnail-108 h4, .thumbnail-108 h5{
+line-height: 1.1em;
+margin: 0 0 6px 0;
+}
+
+.thumbnail-108 h4{
+	font-weight: normal;
+	text-align: right;
+}
 .thumbnail-108:before {
 bottom: -3px;
 right: -3px;
