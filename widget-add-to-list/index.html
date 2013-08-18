@@ -82,9 +82,7 @@
       .gray {
         -webkit-transform: rotate(-90deg);
       }
-      .search-filters label {
-        height:30px;
-      }
+      
       .search-filters {
         margin:0 20px 20px 20px;
       }
@@ -96,10 +94,43 @@
       .thumbnail-info {
         float:right;
       }
-      .thumbnail h3 { color:black;}
+      .thumbnail h3 { 
+        color:black;
+      }
       .cube-controls {
-      left: 229px;
-      top: -107px;
+      left: 215px;
+      top: -93px;
+      }
+       .navbar {
+      left: 30px;
+      bottom: 50px;
+      position: fixed;
+      z-index: 4;      
+      }
+      .legal {
+      left: 30px;
+      bottom: 20px;
+      position: fixed;
+      font-size: 0.85em;
+      z-index: 4;      
+      }
+      .favourite-items {
+        top:10px;
+      }
+      input[type="radio"]:checked + label {
+      border: 2px solid #000;
+      }
+      .search-filters label {
+        font-size:14px;
+        font-weight:normal;
+        line-height: 40px;
+        border: 2px solid #eee;
+        -webkit-user-select: none;
+        text-align: center;
+        margin: 0;
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
       }
     </style>
   </head>
@@ -180,12 +211,7 @@
               </tbody></table>       
             </div>                   
       </div>
-      <!-- <div class="list-item">
-        <h2>my list 1</h2>
-        <ul data-list-to-list-destination-name="favourites">
-        </ul>
-      </div> -->
-      <section class="container">         
+      <section class="favourite-items cube-container">        
         <input id="f-t" name="favourites-panel" type="radio" checked="checked">  
         <input id="f-l" name="favourites-panel" type="radio">  
         <input id="f-f" name="favourites-panel" type="radio">  
@@ -197,28 +223,28 @@
             <tbody> 
               <tr>  
                 <td colspan="3">                     
-                  <label for="f-t">top</label>  
+                  <label for="f-t"></label>  
                 </td>  
               </tr> 
               <tr> 
                 <td>                     
-                  <label for="f-l">left</label>  
+                  <label for="f-l"></label>  
                 </td>             
                 <td>                     
-                  <label for="f-f">front</label>  
+                  <label for="f-f"></label>  
                 </td> 
                 <td>  
-                  <label for="f-r">right</label>  
-                </td>             
+                  <label for="f-r"></label>  
+                </td>
               </tr>   
               <tr> 
                 <td colspan="3">  
-                  <label for="f-bottom">bottom</label>  
+                  <label for="f-bottom"></label>  
                 </td>                    
               </tr>           
               <tr> 
                 <td colspan="3">  
-                  <label for="f-back">back</label>  
+                  <label for="f-back"></label>  
                 </td>                    
               </tr>           
             </tbody> 
@@ -381,6 +407,12 @@
           <li for="f-back">My Job Search (Untitled)</li> 
         </ol> 
       </section>
+      <div class="navbar"> 
+        <a class="btn-my-account" href="#">my account</a> | <a class="btn-log-out" href="#">log out</a> 
+      </div>
+      <div class="legal"> 
+          Wizerati. &copy; Ben Aston 2013 
+        </div>
     </div>
     <div class="lucid-panel-absolute-full-height results-panel overflow-y-scroll">
       <div class="thumbnail thumbnail-219">  

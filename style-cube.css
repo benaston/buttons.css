@@ -35,7 +35,7 @@ margin: 0; /*important to ensure rotational origin is centered*/
 
 
 
-.container {
+.cube-container {
 width: 260px;
 height: 260px;
 position: relative;
@@ -75,7 +75,7 @@ background-image: url(http://www.signstor.com/us%20flag.jpg);
 #f-r:checked ~ .cube-controls label[for="f-r"], 
 #f-bottom:checked ~ .cube-controls label[for="f-bottom"], 
 #f-back:checked ~ .cube-controls label[for="f-back"] {
-border: 2px solid #000;
+background-color:rgba(0,109,204,0.95);
 }
 
 .cube-face-labels li {
@@ -311,6 +311,7 @@ top: 45px;
 
 .cube-net label {
 margin: auto !important;
+border-radius: 0;
 }
 
 .cube-face-labels {
