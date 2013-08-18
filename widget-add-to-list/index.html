@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+margin: 10px 0;
+font-family: inherit;
+font-weight: bold;
+line-height: 20px;
+color: inherit;
+text-rendering: optimizelegibility;
+}
+h1, h2, h3 {
+line-height: 40px;
+}
+h1 {
+font-size: 38.5px;
+}
+h3 {
+font-size: 14.5px;
+color: #999;
+}
+h2 {
+font-size: 21.5px;
+}
+      .container-selected-item {
+        position: relative;
+        top:0;
+        bottom:0;
+        width:500px;
+        display: inline-block;
+        border:0;
+       border-radius:15px;
+       padding:0px;
+       margin:0;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+      }
+      .app-wrapper {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin:0;
+        padding:0;
+      }
+      .selected-item {
+        border-radius: 15px;
+padding: 8px;
+margin: 8px;
+      }
+      .selected-item .menu {
+        text-align: right;
+      }  
+      blockquote {
+padding: 0 0 0 15px;
+margin: 0 0 20px;
+border-left: 5px solid #eee;
+}    
+hr {
+margin: 20px 0;
+border: 0;
+border-top: 1px solid #eee;
+border-bottom: 1px solid #eee;
+}
+    </style>
+  </head>
+  <body class="app-wrapper">  
+    <div class="list-items">
+      <h2>my list 1</h2>
+      <ul data-list-to-list-name="favourites">
+      </ul>
+    </div>
+    <div class="list-items">
+      <div class="list-item">
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">S</button>
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">+</button>
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="remove" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">-</button>
+        <h2>My Item 1</h2>
+      </div>
+      <div class="list-item">    
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="2" class="btn btn-40 btn-primary">S</button>
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="2" class="btn btn-40 btn-primary">+</button>
+        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="remove" data-list-to-list-item-id="2" class="btn btn-40 btn-primary">-</button>
+        <h2>My Item 2</h2>
+      </div>
+    </div>
+    <div class="container-selected-item">
+      <article class="selected-item">
+          <section class="menu">
+            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">S</button>
+            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">+</button>
+            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="remove" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">-</button>
+          </section>          
+          <section>    
+            <h1>Cheetara Kat</h1> 
+            <h3>New York (<i>Not Currently Available</i>)</h3> 
+            <h3>+44 (0)7742157185 | ben@bj.ma</h3> 
+            <h2>Personal Battle Assistant</h2> 
+            <section> 
+              <article class="itemSummary"> 
+                <blockquote> 
+                  Cheetara is a member of the ThunderCats and the third to join. She is the elder of the two females in the group, the younger being WilyKit. She is a cleric whose skills take advantage of her immense speed. She wields a staff, but is also adapted to fighting unarmed. 
+                </blockquote> 
+              </article> 
+            </section> 
+            <section> 
+              <hr> 
+              <h2>Technologies</h2> 
+              <article style="padding:0;margin:0;"> 
+                <p><strong style="font-weight:bold;">Staff</strong></p> 
+              </article> 
+            </section> 
+            <section> 
+              <hr> 
+              <h2>Experience</h2>          
+              <article> 
+                <h4>Senior Developer</h4> 
+                <h5 style="font-style:italic;">JustGiving</h5> 
+                <h6>Mar 11- Mar 12</h6> 
+                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
+              </article>             
+              <article> 
+                <h4>Senior Developer</h4> 
+                <h5 style="font-style:italic;">JustGiving</h5> 
+                <h6>Mar 11- Mar 12</h6> 
+                <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
+              </article>               
+            </section> 
+            <section> 
+              <hr> 
+              <h2>Education</h2> 
+                <article> 
+                  <h4></h4> 
+                  <h5></h5> 
+                  <p></p> 
+                </article> 
+            </section> 
+            <section> 
+              <hr> 
+              <h2>Open Source</h2> 
+              <article> 
+                <h4>NFeature</h4> 
+                <p><a href="github.com">github.com</a></p> 
+              </article> 
+            </section> 
+            <section> 
+              <hr> 
+              <h2>Currently Interested In</h2> 
+              <article> 
+                <p>JavaScript</p> 
+              </article> 
+            </section> 
+            <section> 
+                <hr> 
+                <h2>Selected Books</h2> 
+              <article> 
+                <p>The Art of Programming, JK Tolkien</p> 
+              </article> 
+            </section> 
+            <section> 
+              <article> 
+                <hr> 
+                <a href="#" class="back-to-top">Back to top</a> 
+              </article> 
+            </section> 
+          </section>                   
+      </article>
+    </div>
+    <script id="template-list-item-id-1" type="text/html">
+      <li data-list-to-list-item-id="1">
+        <h1>Foo</h1>
+      </li>
+    </script>
+    <script id="template-list-item-id-2" type="text/html">
+      <li data-list-to-list-item-id="2">
+        <h1>Bar</h1>
+      </li>
+    </script>
+    <script id="template-list-item-id-3" type="text/html">
+      <li data-list-to-list-item-id="3">
+        <h1>Baz</h1>
+      </li>
+    </script>    
+  	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+  	<script src="./tiny-pub-sub.js"></script>
+  	<script src="./model.js"></script>
+  	<script src="./view.js"></script>
+  	<script src="./page.js"></script>
+  </body>
+</html>

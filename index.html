@@ -11,6 +11,27 @@ body  {
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: helvetica-1;
+    src: url("helvetica-1.woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: helvetica-2;
+    src: url("helvetica-2.woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: helvetica-3;
+    src: url("helvetica-3.woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 code {
 padding: 2px 4px;
@@ -43,10 +64,11 @@ border-spacing: 0px;
 padding: 20px;
 }
 body {
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-family: normal normal 500 2.8em / 28px "helvetica-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-size: 14px;
 line-height: 20px;
 color: #333333;
+-webkit-font-smoothing: antialiased;
 }
 .table-striped > tbody > tr:nth-child(odd) > td, 
 .table-striped > tbody > tr:nth-child(odd) > th {
@@ -69,7 +91,6 @@ padding: 0 !important;
 cursor: pointer;
 color: #000;
 border-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) !important;
-float: right;
 margin-left: 10px;	
 font-family: 'pictos';
 text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
@@ -115,7 +136,7 @@ border: 3px solid;
 }
 
 .btn:disabled {
-	opacity: 0.5;
+	opacity: 0.3;
 }
 .btn:enabled:hover {
 text-decoration: none;
@@ -740,6 +761,127 @@ background: -webkit-linear-gradient(rgb(244, 244, 244),rgb(236, 236, 236)) repea
         -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
     }
 }
+
+.btn-80.btn-primary.btn-two-tone:before {
+content: 's';
+display: block;
+width: 77px;
+height: 77px;
+border-bottom: 0;
+border-right: 3px solid rgba(0, 209, 254, 0.95);
+border-radius: 80px;
+position: relative;
+bottom: 1px;
+right: -3px;
+z-index: 999;
+-webkit-transition: box-shadow .1s linear;
+background: rgba(0, 0, 0, 0);
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+.dialog header h3 {
+	margin: 8px 0 0 15px;
+	line-height:1;
+/*cursor: default;*/
+}
+
+.dialog header {	
+	text-shadow: 0 -1px 1px rgba(255,255,255,0.2);
+	color: black;
+	background-color: rgba(195, 221, 246, .95);
+	padding: 14px;
+	border-radius: 5px 55px 0 0;
+	margin-top: 0;
+	outline: none;	
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.dialog {
+	position: relative;
+	display: block;
+	width: 500px;
+	margin: auto;    
+	margin-top: 15%;    
+	z-index: 101;
+	border-radius: 5px 55px 55px 55px;
+	box-shadow: 0 0 0 3px rgba(10, 10, 30, 0.5), 5px 5px 4px 4px rgba(0,0,0,0.4);	
+	border: 2px dotted rgba(0,0,0,.3);	
+}
+
+.dialog article {	
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,.9)),color-stop(100%,rgba(255,255,255,.7)));
+	border-radius: 0 0 55px 55px;
+	width: 100%;
+	height: 100%;
+}
+.dialog menu {
+	display: inline-block;
+	width: 100%;
+	padding: 0;
+	margin: 5px 0px 7px -4px;
+}
+
+.dialog-wrapper .spinner {
+visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity .5s linear 0s, visibility 0s linear .5s;
+}
+
+.dialog-wrapper[data-state="waiting"] .spinner {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity .5s linear 0s, visibility 0 linear 0;
+}
+
+.dialog-wrapper .waiting,
+.dialog-wrapper .success,
+.dialog-wrapper .error {
+    display:none;
+}
+
+.dialog-wrapper[data-state="waiting"] .waiting,
+.dialog-wrapper[data-state="success"] .success,
+.dialog-wrapper[data-state="error"] .error {
+    display:block;
+}
+
+.dialog-wrapper {	
+	position: relative;
+	z-index: 100;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity .05s linear 0s, visibility 0s linear .05s;
+	-webkit-user-select: none;
+}
+
+.dialog-wrapper.active {	
+	opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity .05s linear 0s, visibility 0s linear 0s;
+}
+
+#gray-curtain {
+    background-color: rgba(0,0,0,.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;    
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    -webkit-transition: opacity .05s linear 0s, visibility 0s linear .05s;	
+}
+
+#gray-curtain.active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity .05s linear 0s, visibility 0s linear 0s;
+}
 </style>
 </head>
 <body>
@@ -761,12 +903,17 @@ background: -webkit-linear-gradient(rgb(244, 244, 244),rgb(236, 236, 236)) repea
 				<button type="button" class="btn btn-80" value="s">s</button></td>
 			<td><code>btn btn-80</code></td>
 			<td>Standard gray button with gradient</td>
-		</tr>
+		</tr>    
 		<tr>
 			<td><button type="button" class="btn btn-80 btn-primary">s</button></td>
 			<td><code>btn btn-80 btn-primary</code></td>
 			<td>Primary Button</td>
 		</tr>
+    <tr>
+      <td><button type="button" class="btn btn-80 btn-primary btn-two-tone">s</button></td>
+      <td><code>btn btn-80 btn-primary btn-two-tone</code></td>
+      <td>Primary Button Two-Tone</td>
+    </tr>
 		<tr>
 			<td><button type="button" class="btn btn-80 btn-success">s</button></td>
 			<td><code>btn btn-80 btn-success</code></td>
@@ -1222,7 +1369,74 @@ background: -webkit-linear-gradient(rgb(244, 244, 244),rgb(236, 236, 236)) repea
 			<td></td>
 			<td>Spinner</td>
 		</tr>
+		<tr>
+			<td>
+			<input type="button" class="btn-show-dialog circular-btn" alt="Open" title="Open" value="Q">	
+				<div id="gray-curtain"></div>
+				<div id="example" class="dialog-wrapper" 
+						 data-state=""
+						 data-strings='{"title":"Example Dialog", "message-waiting":"Waiting...", "message-success":"Would you like to &lt;span class=\"foo\"&gt;foo&lt;/span class=\"bar\"&gt;, &lt;span&gt;bar&lt;/span&gt; or &lt;span class=\"baz\"&gt;baz?&lt;/span&gt;&lt;p class=\"important-text\"&gt;Beware of the bam!&lt;/p&gt;", "message-error":"Oops an error has occurred."}'>
+					 <div class="three-d-context">
+						<form method="POST" action="" class="flipped">
+							<section class="dialog front">
+								<header class="sheen grabbable">
+									<h3></h3>
+								</header>				
+								<div class="spinner three-d-element"></div>
+								<article class="waiting">											
+									<p class="message"></p>
+									<menu>
+										<input type="button" class="circular-btn" data-action="cancel" alt="Cancel" title="Cancel" value="*">	                        
+									</menu>
+								</article>
+								<article class="success">
+									<p class="message"></p>
+									<menu>
+										<input type="button" class="circular-btn" data-action="success" alt="Yes" title="Yes" value="3">	
+										<input type="button" class="circular-btn" data-action="cancel" alt="No" title="No" value="*">	
+									</menu>
+								</article>
+								<article class="error">
+									<p class="message"></p>
+									<menu>
+										<input type="button" class="circular-btn" data-action="cancel" alt="Cancel" title="Cancel" value="3">	
+									</menu>						
+								</article>
+							</section>				
+						</form>
+					</div>
+				</div>
+			</td>
+			<td></td>
+			<td>Modal Dialog</td>
+		</tr>
 	</table>
+  <table class="table-bordered table-striped">
+    <tr>
+      <th>Element</th>
+      <th>class=""</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <script>
+  <script id="template-list-item-1" type="text/html">
+    <h1>Foo</h1>
+  </script>
+
 	TODO: define the remainder of the UI elements (cube, responsive layout, remainder of profile/my account, modal dialogues (express interest), global notifications (slide down from top, and render from queue). Backaets around favourites change in nature depending on whether they have expressed an interest. Add drag and drop functionality to cube. Add sections for JavaScript MVC elements.
+	
+	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+	<script src="./drags.js"></script>
+	<script src="./tiny-pub-sub.js"></script>
+	<script src="./model.js"></script>
+	<script src="./view.js"></script>
+	<script src="./page.js"></script>  
 </body>
 </html>
