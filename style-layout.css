@@ -1,0 +1,29 @@
+ .lucid-panel-absolute-full-height {
+position: absolute;
+top:0;
+bottom:0;
+overflow: hidden;
+display: inline-block;
+border:0;
+padding:0px;
+margin:0;
+height: 100%;
+width:500px;
+}
+.lucid-app-wrapper {
+height: 100%;
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+overflow-x: auto;
+overflow-y: hidden;
+margin:0;
+padding:0;
+}
+.overflow-y-scroll {
+overflow-y: scroll !important;
+}
+.overflow-visible {
+overflow: visible !important;
+}

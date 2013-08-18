@@ -9,7 +9,7 @@ app.ListToListView = function (model) {
 
     var self = this;
 
-    this.$domElementForDestinationList = $("ul[data-list-to-list-name='" + model.name + "'], ol[data-list-to-list-name='" + model.name + "']");
+    this.$domElementForDestinationList = $("*[data-list-to-list-destination-name='" + model.name + "']");
     this.$domElementsThatToggle = $("*[data-list-to-list-action='toggle'][data-list-to-list-name='" + model.name + "']");
     this.$domElementsThatAdd = $("*[data-list-to-list-action='add'][data-list-to-list-name='" + model.name + "']");
     this.$domElementsThatRemove = $("*[data-list-to-list-action='remove'][data-list-to-list-name='" + model.name + "']");

@@ -1,0 +1,103 @@
+@font-face {
+font-family: museo-sans-500;
+src: url("./museo-sans-500.woff");
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: pictos;
+src: url("pictos.woff");
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: helvetica-1;
+src: url("helvetica-1.woff");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: helvetica-2;
+src: url("helvetica-2.woff");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: helvetica-3;
+src: url("helvetica-3.woff");
+font-weight: normal;
+font-style: normal;
+}
+
+body {
+font-family: "museo-sans-500", Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333333;
+-webkit-font-smoothing: antialiased;
+}
+
+h2 {
+clear:both;
+-webkit-user-select:auto;
+}
+ h1, h2, h3, h4, h5, h6 {
+margin: 10px 0;
+font-family: inherit;
+font-weight: bold;
+line-height: 20px;
+color: inherit;
+text-rendering: optimizelegibility;
+}
+h1, h2 {
+line-height: 40px;
+}
+h3 {
+line-height: 21px;
+}
+h1 {
+font-size: 38.5px;
+}
+h3 {
+font-size: 14.5px;
+color: #999;
+}
+h2 {
+font-size: 21.5px;
+}
+hr {
+margin: 20px 0;
+border: 0;
+border-top: 1px solid #eee;
+border-bottom: 1px solid #eee;
+}
+      blockquote {
+padding: 0 0 0 15px;
+margin: 0 0 20px;
+border-left: 5px solid #eee;
+}    
+code {
+padding: 2px 4px;
+color: #d14;
+white-space: nowrap;
+background-color: #f7f7f9;
+border: 1px solid #e1e1e8;
+}
+code, pre {
+padding: 0 3px 2px;
+font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+font-size: 12px;
+color: #333333;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+body {
+-webkit-user-select:none;
+}
+input[type='text'] {
+font-family: 'museo-sans-500' !important;
+}
+.pictos {font-family: 'pictos';}

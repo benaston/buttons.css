@@ -1,101 +1,430 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-    h1, h2, h3, h4, h5, h6 {
-margin: 10px 0;
-font-family: inherit;
-font-weight: bold;
-line-height: 20px;
-color: inherit;
-text-rendering: optimizelegibility;
-}
-h1, h2, h3 {
-line-height: 40px;
-}
-h1 {
-font-size: 38.5px;
-}
-h3 {
-font-size: 14.5px;
-color: #999;
-}
-h2 {
-font-size: 21.5px;
-}
-      .container-selected-item {
-        position: relative;
-        top:0;
-        bottom:0;
-        width:500px;
-        display: inline-block;
-        border:0;
-       border-radius:15px;
-       padding:0px;
-       margin:0;
-        height: 100%;
-        overflow: hidden;
-        overflow-y: scroll;
+  <head>    
+    <link rel="stylesheet" type="text/css" href="../style-typography.css">
+    <link rel="stylesheet" type="text/css" href="../style-layout.css">
+    <link rel="stylesheet" type="text/css" href="../style-form-element.css">
+    <link rel="stylesheet" type="text/css" href="../style-table.css">
+    <link rel="stylesheet" type="text/css" href="../style-special.css">
+    <link rel="stylesheet" type="text/css" href="../style-cube.css">
+    <style>   
+     .is-selected {
+        color: gold !important;    
+      }     
+      .results-panel {
+        width:275px;
+        left: 382px;
+        padding: 0 10px 0 10px;       
       }
-      .app-wrapper {
-        height: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        margin:0;
-        padding:0;
+      .items-of-interest-panel {
+        left:675px;
+      }
+      .search-panel{
+        left:0;
+        width:300px;
       }
       .selected-item {
         border-radius: 15px;
-padding: 8px;
-margin: 8px;
+        padding: 8px 15px 8px 18px;
+        margin: 8px;
       }
       .selected-item .menu {
         text-align: right;
       }  
-      blockquote {
-padding: 0 0 0 15px;
-margin: 0 0 20px;
-border-left: 5px solid #eee;
-}    
-hr {
-margin: 20px 0;
-border: 0;
-border-top: 1px solid #eee;
-border-bottom: 1px solid #eee;
-}
+      .search-form{
+        border-right: 2px solid #c0c0c0;
+        border-radius: 0 0 455px 0;
+        width: 375px;
+        height:300px;
+      }
+      #btn-search {
+        position: absolute;
+        left: 259px;
+        top: 45px;
+      }
+      .list-items {
+       box-shadow: 1px 1px 2px 1px rgba(0,0,0,.1);    
+       width:300px;
+       padding:20px;
+       display:inline-block;
+       vertical-align: top;
+       margin:10px;
+      }
+      .list-item {
+       border:2px solid grey;
+       border-radius:15px;
+       padding:10px 20px 10px 20px;
+       margin:10px 20px 10px 20px;
+      }
+      .list-item button {
+       float:right;      
+      }
+      h2 {
+       clear:both;
+       -webkit-user-select:auto;
+      }
+      .search-filters {
+      display: inline-block;
+      position: relative;
+      }
+      .search-filters table tr:nth-child(1) {
+      height: 30px;
+      }
+      .search-filters table {
+      width: 100%;
+      text-align: center;
+      margin-top: 5px;
+      }
+      .search-filters tr:nth-child(2) label {
+      position: relative;
+      left: 20px;
+      }
+      .gray {
+        -webkit-transform: rotate(-90deg);
+      }
+      .search-filters label {
+        height:30px;
+      }
+      .search-filters {
+        margin:0 20px 20px 20px;
+      }
+      .thumbnail-219 {
+      padding: 1px 12px 1px 12px;
+      margin: 15px 20px 25px 20px;
+      height: 178px;
+      }
+      .thumbnail-info {
+        float:right;
+      }
+      .thumbnail h3 { color:black;}
+      .cube-controls {
+      left: 229px;
+      top: -107px;
+      }
     </style>
   </head>
-  <body class="app-wrapper">  
-    <div class="list-items">
-      <h2>my list 1</h2>
-      <ul data-list-to-list-name="favourites">
-      </ul>
-    </div>
-    <div class="list-items">
-      <div class="list-item">
-        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">S</button>
-        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">+</button>
-        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="remove" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">-</button>
-        <h2>My Item 1</h2>
+  <body class="lucid-app-wrapper">  
+    <div class="lucid-panel-absolute-full-height search-panel overflow-visible">      
+      <div class="search-form"> 
+            <input type="button" id="btn-search" class="btn btn-80 btn-primary" alt="Search" title="Search" value="s"> 
+            <div class="search-fields"> 
+              <input id="foo" name="foo" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Keywords..." tabindex="1" autocorrect="off" autocapitalize="none" type="text"> 
+              <input id="foo2" name="foo2" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="2" autocorrect="off" autocapitalize="none" type="text"> 
+            </div> 
+            <div class="search-filters"> 
+              <span class="gray">Maximum rate (GBP)</span> 
+              <table> 
+                <tbody><tr>                  
+                  <td> 
+                    <input id="r350" name="r" type="radio"> 
+                    <label for="r350">350</label>              
+                  </td> 
+                  <td> 
+                    <input id="r450" name="r" type="radio"> 
+                    <label for="r450"> 
+                      450                
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r550" name="r" type="radio"> 
+                    <label for="r550"> 
+                      550                
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r650" name="r" type="radio"> 
+                    <label for="r650"> 
+                      650                
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r750+" name="r" type="radio"> 
+                    <label for="r750+"> 
+                      750+           
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r850" name="r" type="radio">                                        
+                  </td> 
+                </tr>  
+                <tr>                                     
+                  <td> 
+                    <input id="r400" name="r" type="radio"> 
+                    <label for="r400"> 
+                      400                
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r500" name="r" type="radio"> 
+                    <label for="r500"> 
+                      500                
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r600" name="r" type="radio"> 
+                    <label for="r600"> 
+                      600                
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r700" name="r" type="radio"> 
+                    <label for="r700"> 
+                      700 
+                    </label> 
+                  </td> 
+                  <td> 
+                    <input id="r800+" name="r" type="radio"> 
+                     
+                  </td>          
+                </tr>                
+              </tbody></table>       
+            </div>                   
       </div>
-      <div class="list-item">    
-        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="2" class="btn btn-40 btn-primary">S</button>
-        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="2" class="btn btn-40 btn-primary">+</button>
-        <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="remove" data-list-to-list-item-id="2" class="btn btn-40 btn-primary">-</button>
-        <h2>My Item 2</h2>
+      <!-- <div class="list-item">
+        <h2>my list 1</h2>
+        <ul data-list-to-list-destination-name="favourites">
+        </ul>
+      </div> -->
+      <section class="container">         
+        <input id="f-t" name="favourites-panel" type="radio" checked="checked">  
+        <input id="f-l" name="favourites-panel" type="radio">  
+        <input id="f-f" name="favourites-panel" type="radio">  
+        <input id="f-r" name="favourites-panel" type="radio">  
+        <input id="f-bottom" name="favourites-panel" type="radio">  
+        <input id="f-back" name="favourites-panel" type="radio">            
+        <div class="cube-controls"> 
+          <table class="cube-net">  
+            <tbody> 
+              <tr>  
+                <td colspan="3">                     
+                  <label for="f-t">top</label>  
+                </td>  
+              </tr> 
+              <tr> 
+                <td>                     
+                  <label for="f-l">left</label>  
+                </td>             
+                <td>                     
+                  <label for="f-f">front</label>  
+                </td> 
+                <td>  
+                  <label for="f-r">right</label>  
+                </td>             
+              </tr>   
+              <tr> 
+                <td colspan="3">  
+                  <label for="f-bottom">bottom</label>  
+                </td>                    
+              </tr>           
+              <tr> 
+                <td colspan="3">  
+                  <label for="f-back">back</label>  
+                </td>                    
+              </tr>           
+            </tbody> 
+          </table> 
+        </div> 
+        <div class="cube">            
+          <figure class="center latitude">
+          </figure>
+          <figure class="center longitude">
+          </figure>
+          <figure class="center orbit">
+          </figure>
+          <figure class="center">
+          </figure>
+          <figure class="front"> 
+            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+                <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div>          
+            </div> 
+          </figure> 
+          <figure class="back"> 
+            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+            </div> 
+          </figure> 
+          <figure class="right"> 
+            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+                <div class="hover"> 
+                <div class="result sheen"></div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen"></div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen"></div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen"></div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen"></div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen"></div>       
+              </div> 
+            </div> 
+          </figure> 
+          <figure class="left"> 
+            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div id="foo" class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+              <div class="hover"> 
+                <div class="result sheen">   
+                </div>       
+              </div> 
+            </div> 
+          </figure> 
+          <figure class="top"> 
+            <div class="favourites" data-list-to-list-destination-name="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+            </div> 
+          </figure> 
+          <figure class="bottom"> 
+            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+                <div class="hover"> 
+                  <div class="result sheen">   
+                  </div>       
+                </div> 
+                <div id="foo" class="hover"> 
+                  <div class="result sheen">   
+                  </div>       
+                </div> 
+                <div class="hover"> 
+                  <div class="result sheen">   
+                  </div>       
+                </div> 
+                <div class="hover"> 
+                  <div class="result sheen">   
+                  </div>        
+                </div> 
+                <div class="hover"> 
+                  <div class="result sheen">   
+                  </div>       
+                </div> 
+                <div class="hover"> 
+                  <div class="result sheen">   
+                  </div>       
+                </div> 
+            </div> 
+          </figure> 
+        </div> 
+        <ol class="cube-face-labels"> 
+          <li for="f-t">My Job Search (Web Companies)</li> 
+          <li for="f-l">My Job Search (Contracting)</li> 
+          <li for="f-f">My Job Search (Untitled)</li> 
+          <li for="f-r">My Job Search (Untitled)</li> 
+          <li for="f-bottom">My Job Search (Untitled)</li> 
+          <li for="f-back">My Job Search (Untitled)</li> 
+        </ol> 
+      </section>
+    </div>
+    <div class="lucid-panel-absolute-full-height results-panel overflow-y-scroll">
+      <div class="thumbnail thumbnail-219">  
+        <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="1">S</div>
+        <h3>C# Developer / Technical Lead</h3>   
+        <p>£475-550/day (more for excellent candidates)</p> 
+        <p>London</p> 
+        <p class="posted">1 day ago</p>                 
+      </div>
+      <div class="thumbnail thumbnail-219">  
+        <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="2">S</div>
+        <h3>Software Architect C#/.Net/Silverlight - Banking - Zürich</h3>   
+        <p>£400-500/day</p> 
+        <p>Zurich</p> 
+        <p class="posted">2 days ago</p>                 
+      </div> 
+      <div class="thumbnail thumbnail-219">  
+        <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
+        <h3>Front Office C# Engineer - Interest Rates & Pricing</h3>   
+        <p>550-575/day</p> 
+        <p>London</p> 
+        <p class="posted">3 days ago</p>                 
+      </div>
+      <div class="thumbnail thumbnail-219">  
+        <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
+        <h3>Scrum Master Agile Greenfield Finance .net</h3>   
+        <p>350-500/day</p> 
+        <p>Warwickshire</p> 
+        <p class="posted">3 days ago</p>                 
+      </div>
+      <div class="thumbnail thumbnail-219">  
+        <div class="thumbnail-info pictos" data-list-to-list-action="toggle" data-list-to-list-name="favourites" data-list-to-list-item-id="3">S</div>
+        <h3>C# .Net Developer, Investment Bank, Equity Trading</h3>   
+        <p>550-550/day</p> 
+        <p>London</p> 
+        <p class="posted">3 days ago</p>                 
       </div>
     </div>
-    <div class="container-selected-item">
+    <div class="lucid-panel-absolute-full-height items-of-interest-panel overflow-y-scroll">
       <article class="selected-item">
           <section class="menu">
             <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="toggle" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">S</button>
-            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">+</button>
-            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="remove" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">-</button>
+            <button type="button" data-list-to-list-name="favourites" data-list-to-list-action="add" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">-</button>
+            <button type="button" data-list-to-list-item-id="1" class="btn btn-40 btn-primary">2</button>
           </section>          
           <section>    
             <h1>Cheetara Kat</h1> 
@@ -120,20 +449,20 @@ border-bottom: 1px solid #eee;
               <hr> 
               <h2>Experience</h2>          
               <article> 
-                <h4>Senior Developer</h4> 
-                <h5 style="font-style:italic;">JustGiving</h5> 
-                <h6>Mar 11- Mar 12</h6> 
+                <h3>Senior Developer</h3> 
+                <h4 style="font-style:italic;">JustGiving</h4> 
+                <h5>Mar 11- Mar 12</h5> 
                 <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
               </article>             
               <article> 
-                <h4>Senior Developer</h4> 
-                <h5 style="font-style:italic;">JustGiving</h5> 
-                <h6>Mar 11- Mar 12</h6> 
+                <h3>Senior Developer</h3> 
+                <h4 style="font-style:italic;">JustGiving</h4> 
+                <h5>Mar 11- Mar 12</h5> 
                 <p style="margin-top:5px;">blah2 blah2blah blahblah blahblah2 blah2blah blahblah blahblah2 blah2blah blahblah blah</p> 
               </article>               
             </section> 
             <section> 
-              <hr> 
+              <hr/> 
               <h2>Education</h2> 
                 <article> 
                   <h4></h4> 
@@ -157,7 +486,7 @@ border-bottom: 1px solid #eee;
               </article> 
             </section> 
             <section> 
-                <hr> 
+                <hr/> 
                 <h2>Selected Books</h2> 
               <article> 
                 <p>The Art of Programming, JK Tolkien</p> 
@@ -173,19 +502,22 @@ border-bottom: 1px solid #eee;
       </article>
     </div>
     <script id="template-list-item-id-1" type="text/html">
-      <li data-list-to-list-item-id="1">
-        <h1>Foo</h1>
-      </li>
+      <div class="hover" data-list-to-list-item-id="1"> 
+        <div class="thumbnail thumbnail-108" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;"> 
+        </div>       
+      </div>
     </script>
     <script id="template-list-item-id-2" type="text/html">
-      <li data-list-to-list-item-id="2">
-        <h1>Bar</h1>
-      </li>
+      <div class="hover" data-list-to-list-item-id="2"> 
+        <div class="thumbnail thumbnail-108" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;"> 
+        </div>       
+      </div>
     </script>
     <script id="template-list-item-id-3" type="text/html">
-      <li data-list-to-list-item-id="3">
-        <h1>Baz</h1>
-      </li>
+      <div class="hover" data-list-to-list-item-id="3"> 
+        <div class="thumbnail thumbnail-108" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;"> 
+        </div>       
+      </div>
     </script>    
   	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
   	<script src="./tiny-pub-sub.js"></script>

@@ -1,0 +1,201 @@
+
+.btn {
+padding: 0 !important;
+cursor: pointer;
+color: #000;
+border-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) !important;
+margin-left: 10px;	
+font-family: 'pictos';
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-color: transparent;
+-webkit-user-select:none;
+text-align:center;
+box-sizing: border-box;
+border: 2px solid;
+}
+
+.btn-40 {
+min-width: 40px;
+border-radius: 40px !important;
+line-height: 37px !important;
+height: 40px !important;
+font-size: 1em;
+}
+
+.btn-50 {
+min-width: 50px;
+border-radius: 50px !important;
+line-height: 47px !important;
+height: 50px !important;
+font-size: 1em;
+}
+
+.btn-80 {
+min-width: 80px;
+border-radius: 80px !important;
+line-height: 77px !important;
+height: 80px !important;
+font-size: 1.9em;
+border: 3px solid;
+}
+
+.btn-100 {
+min-width: 100px;
+border-radius: 100px !important;
+line-height: 97px !important;
+height: 100px !important;
+font-size: 2.1em;
+border: 3px solid;
+}
+
+.btn:disabled {
+	opacity: 0.3;
+}
+.btn:enabled:hover {
+text-decoration: none;
+border-color: rgba(0, 0, 0, 0.85) rgba(0, 0, 0, 0.85) rgba(0, 0, 0, 0.85) !important;
+-webkit-transition: border-color 0.1s linear, box-shadow 0.1s linear;
+box-shadow: 0 0 9px 2px rgba(200,200,200,0.2);
+}
+.btn:enabled:focus {
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: 2px;
+}
+.btn:enabled:active {
+box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05) !important;
+-webkit-transition: box-shadow 0.1s linear;
+}
+
+.btn-primary {
+border-color: rgba(0,109,204,0.95) rgba(0,109,204,0.95) rgba(0,109,204,0.95) !important;
+}
+.btn-primary:enabled:hover {
+border-color: #0059b8 #0059b8 #0059b8 !important;
+}
+
+
+.btn-success {
+border-color: rgba(0,200,0,0.45) rgba(0,200,0,0.45) rgba(0,200,0,0.45) !important;
+}
+.btn-success:enabled:hover {
+border-color: rgba(0,200,0,0.85) rgba(0,200,0,0.85) rgba(0,200,0,0.85) !important;
+}
+
+.btn-danger {
+border-color: rgba(189, 54, 47, .85) rgba(189, 54, 47, .85) rgba(189, 54, 47, .85) !important;
+}
+.btn-danger:enabled:hover {
+border-color: rgba(189, 54, 47, .95) rgba(189, 54, 47, .95) rgba(189, 54, 47, .95) !important;
+}
+
+.btn-inverse {
+color: rgb(0, 175, 237);
+}
+
+html select, 
+html textarea, 
+html input[type="text"], 
+html input[type="password"], 
+html input[type="datetime"], 
+html input[type="datetime-local"], 
+html input[type="date"], 
+html input[type="month"], 
+html input[type="time"], 
+html input[type="week"], 
+html input[type="number"], 
+html input[type="email"], 
+html input[type="url"], 
+html input[type="search"], 
+html input[type="tel"], 
+html input[type="color"], 
+html .uneditable-input {
+box-shadow: none;
+border-radius: 0;
+margin: 20px;
+background: rgba(0, 0, 0, 0);
+border: none;
+border-bottom: 1px dotted rgb(91, 91, 120);
+display: inline-block;
+vertical-align: middle;
+outline: none;
+padding: 0;
+-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.field {
+color: rgb(85, 85, 85);
+font-size: 1.2em !important;
+line-height: 31px !important;
+height: 31px !important;
+}
+
+
+input[type="radio"] {
+position: absolute;
+visibility: hidden;
+cursor: pointer;
+}
+
+input[type="radio"]:checked + label.radio {
+border: 2px solid black;
+}
+
+input[type="radio"]:checked + label.radio-inverted {
+border: 2px solid white;
+}
+
+label.radio {
+height: 80px;
+width: 80px;
+border-radius: 80px;
+line-height: 77px;
+border: 2px solid silver;
+text-align: center;
+display: block;
+box-sizing: border-box;
+cursor: pointer;
+margin:10px;
+-webkit-user-select: none;
+}
+
+label.radio:hover {
+-webkit-transition: box-shadow .1s linear;
+}
+
+label.radio:active {
+-webkit-transition: box-shadow .1s linear;
+box-shadow: 0 0 19px 12px rgba(200, 200, 200, .3);
+}
+
+label.radio-inverted {
+border: 2px solid black;
+box-shadow: 0 0 9px 2px rgba(200, 200, 200, 0.2);
+color: rgb(0, 175, 237);
+}
+
+label.radio-inverted:hover {
+-webkit-transition: box-shadow .1s linear;
+box-shadow: 0 0 9px 2px rgba(200, 200, 200, 0.3);
+}
+
+label.radio-inverted:active {
+-webkit-transition: box-shadow .1s linear;
+box-shadow: 0 0 19px 12px rgba(200, 200, 200, .3);
+}
+
+input[type="checkbox"], input[type="radio"] {
+display: none;
+}
+
+label {
+margin: 0;
+height: 40px;
+width: 40px;
+border-radius: 40px;
+line-height: 37px;
+border: 2px solid #eee;
+-webkit-user-select: none;
+text-align: center;
+cursor:pointer;
+display:block;
+}
