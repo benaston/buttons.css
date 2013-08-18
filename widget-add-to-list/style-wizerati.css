@@ -1,0 +1,137 @@
+.is-selected {
+        color: gold !important;    
+      }     
+      .results-panel {
+        width:275px;
+        left: 382px;
+        padding: 0 10px 0 10px;       
+      }
+      .items-of-interest-panel {
+        left:675px;
+      }
+      .search-panel{
+        left:0;
+        width:300px;
+      }
+      .selected-item {
+        border-radius: 15px;
+        padding: 8px 15px 8px 18px;
+        margin: 8px;
+      }
+      .selected-item .menu {
+        text-align: right;
+      }  
+      .search-form{
+        border-right: 2px solid #c0c0c0;
+        border-radius: 0 0 455px 0;
+        width: 375px;
+        height: 269px;
+      }
+      #btn-search {
+        position: absolute;
+        left: 259px;
+        top: 45px;
+      }
+      .list-items {
+       box-shadow: 1px 1px 2px 1px rgba(0,0,0,.1);    
+       width:300px;
+       padding:20px;
+       display:inline-block;
+       vertical-align: top;
+       margin:10px;
+      }
+      .list-item {
+       border:2px solid grey;
+       border-radius:15px;
+       padding:10px 20px 10px 20px;
+       margin:10px 20px 10px 20px;
+      }
+      .list-item button {
+       float:right;      
+      }
+      h2 {
+       clear:both;
+       -webkit-user-select:auto;
+      }
+      .search-filters {
+      display: inline-block;
+      position: relative;
+      }
+      .search-filters table tr:nth-child(1) {
+      height: 30px;
+      }
+      .search-filters table {
+      width: 100%;
+      text-align: center;
+      margin-top: 5px;
+      }
+      .search-filters tr:nth-child(2) label {
+      position: relative;
+      left: 20px;
+      }
+      .gray {
+        -webkit-transform: rotate(-90deg);
+      }
+      
+      .search-filters {
+        margin: 20px 20px 20px 20px;
+      }
+      .thumbnail-219 {
+      padding: 1px 12px 1px 12px;
+      margin: 15px 20px 25px 20px;
+      }
+      .thumbnail-info {
+        float:right;
+      }
+      .thumbnail h3 { 
+        color:black;
+      }
+      .cube-controls {
+      left: 215px;
+      top: -93px;
+      }
+       .navbar {
+      left: 30px;
+      bottom: 50px;
+      position: fixed;
+      z-index: 4;      
+      }
+      .legal {
+      left: 30px;
+      bottom: 20px;
+      position: fixed;
+      font-size: 0.85em;
+      z-index: 4;      
+      }
+      .favourite-items {
+        top:25px;
+      }
+      input[type="radio"]:checked + label {
+      border: 2px solid #000;
+      }
+      .search-filters label {
+        font-size:14px;
+        font-weight:normal;
+        line-height: 40px;
+        border: 2px solid #eee;
+        -webkit-user-select: none;
+        text-align: center;
+        margin: 0;
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
+      }
+      .location-and-posted {
+        text-align: right;
+        font-style: italic;
+      }
+      .rate {
+        text-align: right;        
+      }
+      .thumbnail-108 h3 {
+        font-size:1em;
+        line-height:1em;
+      }
+ 
+
+      

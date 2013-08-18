@@ -7,141 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../style-table.css">
     <link rel="stylesheet" type="text/css" href="../style-special.css">
     <link rel="stylesheet" type="text/css" href="../style-cube.css">
-    <style>   
-     .is-selected {
-        color: gold !important;    
-      }     
-      .results-panel {
-        width:275px;
-        left: 382px;
-        padding: 0 10px 0 10px;       
-      }
-      .items-of-interest-panel {
-        left:675px;
-      }
-      .search-panel{
-        left:0;
-        width:300px;
-      }
-      .selected-item {
-        border-radius: 15px;
-        padding: 8px 15px 8px 18px;
-        margin: 8px;
-      }
-      .selected-item .menu {
-        text-align: right;
-      }  
-      .search-form{
-        border-right: 2px solid #c0c0c0;
-        border-radius: 0 0 455px 0;
-        width: 375px;
-        height: 269px;
-      }
-      #btn-search {
-        position: absolute;
-        left: 259px;
-        top: 45px;
-      }
-      .list-items {
-       box-shadow: 1px 1px 2px 1px rgba(0,0,0,.1);    
-       width:300px;
-       padding:20px;
-       display:inline-block;
-       vertical-align: top;
-       margin:10px;
-      }
-      .list-item {
-       border:2px solid grey;
-       border-radius:15px;
-       padding:10px 20px 10px 20px;
-       margin:10px 20px 10px 20px;
-      }
-      .list-item button {
-       float:right;      
-      }
-      h2 {
-       clear:both;
-       -webkit-user-select:auto;
-      }
-      .search-filters {
-      display: inline-block;
-      position: relative;
-      }
-      .search-filters table tr:nth-child(1) {
-      height: 30px;
-      }
-      .search-filters table {
-      width: 100%;
-      text-align: center;
-      margin-top: 5px;
-      }
-      .search-filters tr:nth-child(2) label {
-      position: relative;
-      left: 20px;
-      }
-      .gray {
-        -webkit-transform: rotate(-90deg);
-      }
-      
-      .search-filters {
-        margin: 20px 20px 20px 20px;
-      }
-      .thumbnail-219 {
-      padding: 1px 12px 1px 12px;
-      margin: 15px 20px 25px 20px;
-      }
-      .thumbnail-info {
-        float:right;
-      }
-      .thumbnail h3 { 
-        color:black;
-      }
-      .cube-controls {
-      left: 215px;
-      top: -93px;
-      }
-       .navbar {
-      left: 30px;
-      bottom: 50px;
-      position: fixed;
-      z-index: 4;      
-      }
-      .legal {
-      left: 30px;
-      bottom: 20px;
-      position: fixed;
-      font-size: 0.85em;
-      z-index: 4;      
-      }
-      .favourite-items {
-        top:25px;
-      }
-      input[type="radio"]:checked + label {
-      border: 2px solid #000;
-      }
-      .search-filters label {
-        font-size:14px;
-        font-weight:normal;
-        line-height: 40px;
-        border: 2px solid #eee;
-        -webkit-user-select: none;
-        text-align: center;
-        margin: 0;
-        height: 40px;
-        width: 40px;
-        border-radius: 40px;
-      }
-      .location-and-posted {
-        text-align: right;
-        font-style: italic;
-      }
-      .rate {
-        text-align: right;        
-      }
-      .thumbnail-108 h3 {
-        font-size:1em;
-        line-height:1em;
-      }
+    <link rel="stylesheet" type="text/css" href="./style-wizerati.css">
+    <style>     
     </style>
   </head>
   <body class="lucid-app-wrapper">  
@@ -149,8 +16,8 @@
       <div class="search-form"> 
             <input type="button" id="btn-search" class="btn btn-80 btn-primary" alt="Search" title="Search" value="s"> 
             <div class="search-fields"> 
-              <input id="foo" name="foo" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Keywords..." tabindex="1" autocorrect="off" autocapitalize="none" type="text"> 
-              <input id="foo2" name="foo2" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="2" autocorrect="off" autocapitalize="none" type="text"> 
+              <input id="#keywords" name="keywords" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Keywords..." tabindex="1" autocorrect="off" autocapitalize="none" type="text"> 
+              <input id="#location" name="location" class="field" pattern="[0-9]{13,16}" required="required" placeholder="Location..." tabindex="2" autocorrect="off" autocapitalize="none" type="text"> 
             </div> 
             <div class="search-filters"> 
               <span class="gray">Maximum rate (GBP)</span> 
@@ -162,27 +29,19 @@
                   </td> 
                   <td> 
                     <input id="r450" name="r" type="radio"> 
-                    <label for="r450"> 
-                      450                
-                    </label> 
+                    <label for="r450">450</label> 
                   </td> 
                   <td> 
                     <input id="r550" name="r" type="radio"> 
-                    <label for="r550"> 
-                      550                
-                    </label> 
+                    <label for="r550">550</label> 
                   </td> 
                   <td> 
                     <input id="r650" name="r" type="radio"> 
-                    <label for="r650"> 
-                      650                
-                    </label> 
+                    <label for="r650">650</label> 
                   </td> 
                   <td> 
                     <input id="r750+" name="r" type="radio"> 
-                    <label for="r750+"> 
-                      750+           
-                    </label> 
+                    <label for="r750+">750+</label> 
                   </td> 
                   <td> 
                     <input id="r850" name="r" type="radio">                                        
@@ -191,31 +50,22 @@
                 <tr>                                     
                   <td> 
                     <input id="r400" name="r" type="radio"> 
-                    <label for="r400"> 
-                      400                
-                    </label> 
+                    <label for="r400">400</label> 
                   </td> 
                   <td> 
                     <input id="r500" name="r" type="radio"> 
-                    <label for="r500"> 
-                      500                
-                    </label> 
+                    <label for="r500">500</label> 
                   </td> 
                   <td> 
                     <input id="r600" name="r" type="radio"> 
-                    <label for="r600"> 
-                      600                
-                    </label> 
+                    <label for="r600">600</label> 
                   </td> 
                   <td> 
                     <input id="r700" name="r" type="radio"> 
-                    <label for="r700"> 
-                      700 
-                    </label> 
+                    <label for="r700">700</label> 
                   </td> 
                   <td> 
                     <input id="r800+" name="r" type="radio"> 
-                     
                   </td>          
                 </tr>                
               </tbody></table>       
@@ -270,109 +120,19 @@
           <figure class="center">
           </figure>
           <figure class="front"> 
-            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-                <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div>          
+            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">        
             </div> 
           </figure> 
           <figure class="back"> 
             <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
             </div> 
           </figure> 
           <figure class="right"> 
             <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-                <div class="hover"> 
-                <div class="result sheen"></div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen"></div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen"></div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen"></div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen"></div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen"></div>       
-              </div> 
             </div> 
           </figure> 
           <figure class="left"> 
             <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div id="foo" class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
-              <div class="hover"> 
-                <div class="result sheen">   
-                </div>       
-              </div> 
             </div> 
           </figure> 
           <figure class="top"> 
@@ -380,31 +140,7 @@
             </div> 
           </figure> 
           <figure class="bottom"> 
-            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-                <div class="hover"> 
-                  <div class="result sheen">   
-                  </div>       
-                </div> 
-                <div id="foo" class="hover"> 
-                  <div class="result sheen">   
-                  </div>       
-                </div> 
-                <div class="hover"> 
-                  <div class="result sheen">   
-                  </div>       
-                </div> 
-                <div class="hover"> 
-                  <div class="result sheen">   
-                  </div>        
-                </div> 
-                <div class="hover"> 
-                  <div class="result sheen">   
-                  </div>       
-                </div> 
-                <div class="hover"> 
-                  <div class="result sheen">   
-                  </div>       
-                </div> 
+            <div class="favourites" ondrop="drop(event)" ondragover="allowDrop(event)">                 
             </div> 
           </figure> 
         </div> 
@@ -454,7 +190,7 @@
         <h3>C# .Net Developer, Investment Bank, Equity Trading</h3>   
         <p class="rate">550-550/day</p> 
         <p class="location-and-posted">London (3 days ago)</p> 
-      </div>
+      </div>      
     </div>
     <div class="lucid-panel-absolute-full-height items-of-interest-panel overflow-y-scroll">
       <article class="selected-item">
@@ -537,6 +273,7 @@
             </section> 
           </section>                   
       </article>
+      
     </div>
     <script id="template-list-item-id-1" type="text/html">      
       <div class="hover" data-list-to-list-item-id="1"> 
@@ -553,12 +290,7 @@
         </div>       
       </div>
     </script>
-    <script id="template-list-item-id-3" type="text/html">
-      <div class="hover" data-list-to-list-item-id="3"> 
-        <div class="thumbnail thumbnail-108" style="background-image: url(http://images4.wikia.nocookie.net/__cb20120619031141/thundercats/images/1/17/Thundercats_2011_S01E21.avi_snapshot_11.01_-2012.06.18_22.31.27-.jpg); background-position:0 0 !important;"> 
-        </div>       
-      </div>
-    </script>    
+       
   	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
   	<script src="./tiny-pub-sub.js"></script>
   	<script src="./model.js"></script>
