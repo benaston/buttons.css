@@ -15,11 +15,14 @@
       }
       .selected-item {
         border-radius: 15px;
-        padding: 8px 15px 8px 18px;
-        margin: 8px;
+		padding: 0px 15px 0px 18px;
+		margin: 0 8px 0 8px;
+        height:100%; /*important for presence of scrollbars*/
+        display:inline-block;
       }
       .selected-item .menu {
         text-align: right;
+        margin-top:8px;
       }  
       .search-form{
         border-right: 2px solid #c0c0c0;

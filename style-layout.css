@@ -8,14 +8,33 @@ border:0;
 padding:0px;
 margin:0;
 height: 100%;
-width:500px;
+}
+.lucid-column {
+-webkit-box-flex: 0;
+-moz-box-flex: 0;
+width:365px;
+}
+.lucid-columns-full-height {
+position: relative;
+top:0;
+bottom:0;
+overflow: hidden;
+border:0;
+padding:0px;
+margin:0;
+height: 100%;
+display: -webkit-box;
+display: -moz-box;
+-webkit-box-align: stretch;
+-moz-box-align: stretch;
+-webkit-box-orient: horizontal;
+-moz-box-orient: horizontal;
 }
 .lucid-app-wrapper {
 height: 100%;
 position: absolute;
 top: 0;
 bottom: 0;
-width: 100%;
 overflow-x: auto;
 overflow-y: hidden;
 margin:0;
@@ -23,6 +42,9 @@ padding:0;
 }
 .overflow-y-scroll {
 overflow-y: scroll !important;
+}
+.overflow-x-scroll {
+overflow-x: scroll !important;
 }
 .overflow-visible {
 overflow: visible !important;
